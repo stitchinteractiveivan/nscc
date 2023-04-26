@@ -1,0 +1,61 @@
+@font-face {
+	font-family: "d-dindin-bold";
+	src: url("../fonts/d-din-bold-webfont.woff2") format("woff2"), url("../fonts/d-din-bold-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+h3 {
+	font-family: "d-dindin-bold", serif;
+}
+
+.container {
+	padding-right: calc(var(--bs-gutter-x) * 0.4);
+	padding-left: calc(var(--bs-gutter-x) * 0.4);
+}
+
+.navbar-brand {
+	padding-top: 2px;
+}
+
+.navbar-brand img {
+	width: 50%;
+}
+
+.padding-x-15 {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.padding-y-20 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.bg_grey {
+	background: #e5e5e5;
+}
+
+/********** tablets **********/
+@media (min-width: 768px) {
+	.navbar .container { /* remove margin */
+		margin: 0 10px;
+	}
+	.navbar-brand {
+		padding-top: 6px;
+	}
+}
+
+/********** laptops **********/
+@media (min-width: 992px) {
+	.navbar .container {
+		margin: 0 18px;
+	}
+	.navbar-brand {
+		padding-top: 14px;
+	}
+}
