@@ -1,0 +1,252 @@
+@font-face {
+	font-family: "d-dindin-bold";
+	src: url("../fonts/d-din-bold-webfont.woff2") format("woff2"), url("../fonts/d-din-bold-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+
+	margin: 12px 15px;
+	padding: 0;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	row-gap: 12px;
+}
+
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1,
+p,
+.p {
+	margin-bottom: 0;
+}
+
+h3 {
+	font-family: "d-dindin-bold", serif;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+h4 {
+	font-family: "d-dindin-bold", serif;
+	font-size: 12px;
+	line-height: 13px;
+
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+}
+
+.btn-primary {
+	--bs-btn-padding-y: 7px;
+	--bs-btn-padding-x: 20px;
+	background: #e2231a;
+	border-radius: 5px;
+	border: #e2231a;
+}
+
+.container {
+}
+
+.flex {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	row-gap: 30px;
+}
+
+.vert-flex {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	align-items: center;
+}
+
+.dot {
+	height: 40px;
+	width: 40px;
+	background-color: #E5E5E5;
+	border-radius: 50%;
+	display: inline-block;
+
+	color: #ffffff;
+
+	border-style: solid;
+	border-width: 1.5px;
+	border-color: #ffffff;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dot-red {
+	background-color: #e2231a;
+}
+
+.progress-line {
+	display: flex;
+
+	height: 1.5px;
+	background-color: #E5E5E5;
+	flex-grow: 1;
+}
+
+.progress-line-red {
+	background-color: #e2231a;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	row-gap: 10px;
+}
+
+line {
+	height: 1px;
+	background-color: #000000;
+}
+
+.navbar-brand img {
+	width: 50%;
+}
+
+.padding-x-15 {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.padding-y-20 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.bg_grey {
+	background: #e5e5e5;
+}
+
+.navbar {
+	--bs-navbar-padding-x: 0;
+	--bs-navbar-padding-y: 0;
+}
+
+.navbar .container {
+	margin: 0px;
+	padding: 0px;
+	--bs-gutter-x: 0;
+	--bs-gutter-y: 0;
+}
+
+/********** tablets **********/
+@media (min-width: 768px) {
+	.navbar .container {
+		/* remove margin */
+		margin: 0 10px;
+	}
+	.navbar-brand {
+		padding-top: 6px;
+	}
+}
+
+/********** laptops **********/
+@media (min-width: 992px) {
+	.navbar .container {
+		margin: 0 18px;
+	}
+	.navbar-brand {
+		padding-top: 14px;
+	}
+}
+
+/* Set the size of the progress bar */
+.progress-bar {
+	width: 400px;
+	height: 100px;
+	position: relative;
+}
+
+/* Style the circles */
+.circle {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 2px solid #ccc;
+	background-color: #fff;
+	display: inline-block;
+	position: absolute;
+	top: 25px;
+	font-size: 24px;
+	text-align: center;
+	line-height: 50px;
+}
+
+/* Style the numbers inside the circles */
+.circle span {
+	position: relative;
+	top: -2px;
+}
+
+/* Style the lines between the circles */
+.line {
+	width: 100px;
+	height: 2px;
+	background-color: #ccc;
+	position: absolute;
+	top: 48px;
+	left: 25px;
+	z-index: -1;
+}
+
+/* Style the first circle */
+.circle-1 {
+	left: 25px;
+}
+
+/* Style the second circle */
+.circle-2 {
+	left: 125px;
+}
+
+/* Style the third circle */
+.circle-3 {
+	left: 225px;
+}
+
+/* Style the fourth circle */
+.circle-4 {
+	left: 325px;
+}
+
+/* Style the first line */
+.line-1 {
+	left: 75px;
+}
+
+/* Style the second line */
+.line-2 {
+	left: 175px;
+}
+
+/* Style the third line */
+.line-3 {
+	left: 275px;
+}
