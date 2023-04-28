@@ -23,7 +23,7 @@
 		<!-- end responsive navbar -->
 
 		<!-- start content-->
-		<div class="container">
+		<div id="start-content" class="container">
 			<div class="row bg_grey">
 				<div class="col padding-x-15 padding-y-20 flex">
 					<h3>Create your new NSCC Account</h3>
@@ -40,40 +40,28 @@
 		</div>
 		<!-- end start content -->
 
-		<!-- progress bar -->
-		<div class="container">
-			<div class="row">
-				<div class="col padding-x-15 padding-y-20 vert-flex">
-					<span class="dot dot-red"><h3>1</h3></span>
-					<div class="progress-line progress-line-red"></div>
-					<span class="dot dot-red"><h3>2</h3></span>
-					<div class="progress-line"></div>
-					<span class="dot"><h3>3</h3></span>
-					<div class="progress-line"></div>
-					<span class="dot"><h3>4</h3></span>
-				</div>
-			</div>
-		</div>
-		<!-- end progress bar -->
-
 		<!-- step form content-->
 		<div class="container">
 			<div class="row">
 				<div class="col padding-x-15 padding-y-20 flex">
 					<!-- start progress bar -->
 					<div class="vert-flex">
-						<span class="dot dot-red"><h3>1</h3></span>
-						<div class="progress-line progress-line-red"></div>
-						<span class="dot dot-red"><h3>2</h3></span>
-						<div class="progress-line"></div>
-						<span class="dot"><h3>3</h3></span>
-						<div class="progress-line"></div>
-						<span class="dot"><h3>4</h3></span>
+						<!-- Step 1 -->
+						<span id="dot-1" class="dot"><h3>1</h3></span>
+						<!-- Step 2 -->
+						<div id="progress-line-1" class="progress-line"></div>
+						<span id="dot-2" class="dot"><h3>2</h3></span>
+						<!-- Step 3 -->
+						<div id="progress-line-2" class="progress-line"></div>
+						<span id="dot-3" class="dot"><h3>3</h3></span>
+						<!-- Step 4 -->
+						<div id="progress-line-3" class="progress-line"></div>
+						<span id="dot-4" class="dot"><h3>4</h3></span>
 					</div>
 					<!-- end progress bar -->
 
 					<!-- step one -->
-					<form-block>
+					<form-block id="step1">
 						<h3>Personal Information</h3>
 
 						<div class="form-floating">
@@ -94,13 +82,13 @@
 						</div>
 
 						<div style="display: flex; flex-direction: row; justify-content: flex-end">
-							<button type="button" class="btn btn-primary"><h4>Continue</h4></button>
+							<button id="continue1" type="button" class="btn btn-primary"><h4>Continue</h4></button>
 						</div>
 						<line></line>
 					</form-block>
 					<!-- end step one -->
 					<!-- step two -->
-					<form-block>
+					<form-block id="step2" style="display: none">
 						<h3>Personal Information</h3>
 
 						<div class="form-floating">
@@ -124,13 +112,13 @@
 							<label for="floatingInput">Email address</label>
 						</div>
 						<div style="display: flex; flex-direction: row; justify-content: flex-end">
-							<button type="button" class="btn btn-primary"><h4>Continue</h4></button>
+							<button id="continue2" type="button" class="btn btn-primary"><h4>Continue</h4></button>
 						</div>
 						<line></line>
 					</form-block>
 					<!-- end step two -->
 					<!-- step three -->
-					<form-block>
+					<form-block id="step3" style="display: none">
 						<h3>Personal Information</h3>
 
 						<div class="form-floating">
@@ -143,18 +131,23 @@
 						</div>
 
 						<div style="display: flex; flex-direction: row; justify-content: flex-end">
-							<button type="button" class="btn btn-primary"><h4>Continue</h4></button>
+							<button id="continue3" type="button" class="btn btn-primary"><h4>Continue</h4></button>
 						</div>
 						<line></line>
 					</form-block>
 					<!-- end step three -->
 					<!-- step four -->
-					<form-block>
+					<form-block id="step4" style="display: none">
 						<h3>Personal Information</h3>
 
 						<form action="?" method="POST">
 							<div class="g-recaptcha" data-sitekey="6Le_RcMlAAAAAF-Tmm2ezyxMPNfmXVCSDBYBxPvW" data-size="normal"></div>
 						</form>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+							<label class="form-check-label" for="flexCheckDefault">I have read and accept the NSCC<br />terms and conditions and privacy policy.</label>
+						</div>
 
 						<div style="display: flex; flex-direction: row; justify-content: flex-end">
 							<button type="button" class="btn btn-primary"><h4>Continue</h4></button>
@@ -166,6 +159,89 @@
 			</div>
 		</div>
 		<!-- end form content -->
+
+		<script>
+			const button = document.querySelector(".btn-primary")
+			const container = document.getElementById("start-content")
+
+			button.addEventListener("click", () => {
+				container.style.display = "none"
+			})
+
+			// Store the progress elements in an array
+			const progressElems = [document.getElementById("dot-1"), document.getElementById("progress-line-1"), document.getElementById("dot-2"), document.getElementById("progress-line-2"), document.getElementById("dot-3"), document.getElementById("progress-line-3"), document.getElementById("dot-4")]
+
+			// Set the initial state of the progress bar
+			setProgressState(1)
+
+			function setProgressState(state) {
+				// Loop through each progress element and update its color
+				for (let i = 0; i < progressElems.length; i++) {
+					if (i < (state - 1) * 2) {
+						// Set the element to red if it's a previous state
+						progressElems[i].classList.add("dot-red")
+						if (i % 2 === 1) {
+							progressElems[i].classList.add("progress-line-red")
+						}
+					} else {
+						// Set the element to gray if it's a future or current state
+						progressElems[i].classList.remove("dot-red")
+						if (i % 2 === 1) {
+							progressElems[i].classList.remove("progress-line-red")
+						}
+					}
+					// patch sol will be replaced javascript
+					// If state 1 is selected, change the circle and progress line to red
+					if (state === 1 && i === 0) {
+						progressElems[i].classList.add("dot-red")
+						progressElems[i].classList.add("progress-line-red")
+					}
+					// If state 2 is selected, change the circle and progress line to red
+					if (state === 2 && i === 2) {
+						progressElems[i].classList.add("dot-red")
+						progressElems[i].classList.add("progress-line-red")
+					}
+					// If state 3 is selected, change the circle and progress line to red
+					if (state === 3 && i === 4) {
+						progressElems[i].classList.add("dot-red")
+						progressElems[i].classList.add("progress-line-red")
+					}
+					// If state 4 is selected, change the circle and progress line to red
+					if (state === 4 && i === 6) {
+						progressElems[i].classList.add("dot-red")
+						progressElems[i].classList.add("progress-line-red")
+					}
+				}
+			}
+
+			// Example usage: set the progress bar to state 3
+			setProgressState(1)
+
+			document.getElementById("continue1").addEventListener("click", function () {
+				nextStep("step1", "step2")
+				setProgressState(2)
+			})
+
+			document.getElementById("continue2").addEventListener("click", function () {
+				nextStep("step2", "step3")
+				setProgressState(3)
+			})
+
+			document.getElementById("continue3").addEventListener("click", function () {
+				nextStep("step3", "step4")
+				setProgressState(4)
+			})
+
+			function nextStep(currentStep, nextStep) {
+				document.getElementById(currentStep).style.display = "none"
+				document.getElementById(nextStep).style.display = "flex"
+			}
+		</script>
+
+		<!-- bootstrap core js -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+		<!-- core theme js -->
+		<script src="js/scripts.js"></script>
 
 		<!-- bootstrap core js -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
