@@ -47,6 +47,13 @@
 		<!-- end progress bar -->
 
 		<script>
+			const button = document.querySelector(".btn-primary")
+
+			button.addEventListener("click", () => {
+				document.getElementById("start-content").style.display = "none"
+				document.getElementById("form-content").style.display = "block"
+			})
+
 			// Store the progress elements in an array
 			const progressElems = [document.getElementById("dot-1"), document.getElementById("progress-line-1"), document.getElementById("dot-2"), document.getElementById("progress-line-2"), document.getElementById("dot-3"), document.getElementById("progress-line-3"), document.getElementById("dot-4")]
 
@@ -69,18 +76,18 @@
 							progressElems[i].classList.remove("progress-line-red")
 						}
 					}
-                    // patch sol will be replaced javascript
-                    // If state 1 is selected, change the circle and progress line to red
+					// patch sol will be replaced javascript
+					// If state 1 is selected, change the circle and progress line to red
 					if (state === 1 && i === 0) {
 						progressElems[i].classList.add("dot-red")
 						progressElems[i].classList.add("progress-line-red")
 					}
-                    // If state 2 is selected, change the circle and progress line to red
+					// If state 2 is selected, change the circle and progress line to red
 					if (state === 2 && i === 2) {
 						progressElems[i].classList.add("dot-red")
 						progressElems[i].classList.add("progress-line-red")
 					}
-                    // If state 3 is selected, change the circle and progress line to red
+					// If state 3 is selected, change the circle and progress line to red
 					if (state === 3 && i === 4) {
 						progressElems[i].classList.add("dot-red")
 						progressElems[i].classList.add("progress-line-red")
@@ -95,6 +102,47 @@
 
 			// Example usage: set the progress bar to state 3
 			setProgressState(1)
+
+			document.getElementById("continue1").addEventListener("click", function () {
+				nextStep("step1", "step2")
+				setProgressState(2)
+			})
+
+			document.getElementById("continue2").addEventListener("click", function () {
+				nextStep("step2", "step3")
+				setProgressState(3)
+			})
+
+			document.getElementById("continue3").addEventListener("click", function () {
+				nextStep("step3", "step4")
+				setProgressState(4)
+			})
+
+			function nextStep(currentStep, nextStep) {
+				document.getElementById(currentStep).style.display = "none"
+				document.getElementById(nextStep).style.display = "flex"
+			}
+
+			const dot1 = document.getElementById("dot-1")
+
+			dot1.addEventListener("click", () => {
+				setProgressState(1)
+			})
+			const dot2 = document.getElementById("dot-2")
+
+			dot2.addEventListener("click", () => {
+				setProgressState(2)
+			})
+			const dot3 = document.getElementById("dot-3")
+
+			dot3.addEventListener("click", () => {
+				setProgressState(3)
+			})
+			const dot4 = document.getElementById("dot-4")
+
+			dot4.addEventListener("click", () => {
+				setProgressState(4)
+			})
 		</script>
 
 		<!-- bootstrap core js -->

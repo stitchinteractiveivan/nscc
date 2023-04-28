@@ -177,39 +177,46 @@
 			function setProgressState(state) {
 				// Loop through each progress element and update its color
 				for (let i = 0; i < progressElems.length; i++) {
-					if (i < (state - 1) * 2) {
-						// Set the element to red if it's a previous state
+					// If state 1 is selected, change dot1 to red, and everything else to gray
+					if (state === 1) {
+						if (i === 0) {
+							progressElems[i].classList.add("dot-red")
+							progressElems[i].classList.add("progress-line-red")
+						} else {
+							progressElems[i].classList.remove("dot-red")
+							progressElems[i].classList.remove("progress-line-red")
+						}
+					}
+					// If state 2 is selected, change dot1, line1, and dot2 to red, and everything else to gray
+					if (state === 2) {
+						if (i === 0 || i === 1 || i === 2) {
+							progressElems[i].classList.add("dot-red")
+							if (i === 1) {
+								progressElems[i].classList.add("progress-line-red")
+							}
+						} else {
+							progressElems[i].classList.remove("dot-red")
+							progressElems[i].classList.remove("progress-line-red")
+						}
+					}
+					// If state 3 is selected, change dot1, line1, dot2, and line2 to red, and everything else to gray
+					if (state === 3) {
+						if (i === 0 || i === 1 || i === 2 || i === 3 || i === 4) {
+							progressElems[i].classList.add("dot-red")
+							if (i === 1 || i === 3) {
+								progressElems[i].classList.add("progress-line-red")
+							}
+						} else {
+							progressElems[i].classList.remove("dot-red")
+							progressElems[i].classList.remove("progress-line-red")
+						}
+					}
+					// If state 4 is selected, change everything to red
+					if (state === 4) {
 						progressElems[i].classList.add("dot-red")
 						if (i % 2 === 1) {
 							progressElems[i].classList.add("progress-line-red")
 						}
-					} else {
-						// Set the element to gray if it's a future or current state
-						progressElems[i].classList.remove("dot-red")
-						if (i % 2 === 1) {
-							progressElems[i].classList.remove("progress-line-red")
-						}
-					}
-					// patch sol will be replaced javascript
-					// If state 1 is selected, change the circle and progress line to red
-					if (state === 1 && i === 0) {
-						progressElems[i].classList.add("dot-red")
-						progressElems[i].classList.add("progress-line-red")
-					}
-					// If state 2 is selected, change the circle and progress line to red
-					if (state === 2 && i === 2) {
-						progressElems[i].classList.add("dot-red")
-						progressElems[i].classList.add("progress-line-red")
-					}
-					// If state 3 is selected, change the circle and progress line to red
-					if (state === 3 && i === 4) {
-						progressElems[i].classList.add("dot-red")
-						progressElems[i].classList.add("progress-line-red")
-					}
-					// If state 4 is selected, change the circle and progress line to red
-					if (state === 4 && i === 6) {
-						progressElems[i].classList.add("dot-red")
-						progressElems[i].classList.add("progress-line-red")
 					}
 				}
 			}
@@ -236,6 +243,27 @@
 				document.getElementById(currentStep).style.display = "none"
 				document.getElementById(nextStep).style.display = "flex"
 			}
+
+			const dot1 = document.getElementById("dot-1")
+
+			dot1.addEventListener("click", () => {
+				setProgressState(1)
+			})
+			const dot2 = document.getElementById("dot-2")
+
+			dot2.addEventListener("click", () => {
+				setProgressState(2)
+			})
+			const dot3 = document.getElementById("dot-3")
+
+			dot3.addEventListener("click", () => {
+				setProgressState(3)
+			})
+			const dot4 = document.getElementById("dot-4")
+
+			dot4.addEventListener("click", () => {
+				setProgressState(4)
+			})
 		</script>
 
 		<!-- bootstrap core js -->
