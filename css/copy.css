@@ -114,7 +114,7 @@ h4 {
 	background-color: #e2231a;
 }
 
-form {
+form-block {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
