@@ -41,7 +41,7 @@
 		<!-- end start content -->
 
 		<!-- step form content-->
-		<div class="container">
+		<div id="form-content" class="container" style="display: none">
 			<div class="row">
 				<div class="col padding-x-15 padding-y-20 flex">
 					<!-- start progress bar -->
@@ -162,10 +162,10 @@
 
 		<script>
 			const button = document.querySelector(".btn-primary")
-			const container = document.getElementById("start-content")
 
 			button.addEventListener("click", () => {
-				container.style.display = "none"
+				document.getElementById("start-content").style.display = "none"
+				document.getElementById("form-content").style.display = "block"
 			})
 
 			// Store the progress elements in an array
