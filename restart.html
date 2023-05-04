@@ -12,190 +12,259 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet" />
 		<!-- core theme ccs (includes bootstrap) -->
 		<link href="css/styles.css" rel="stylesheet" />
-		<link href="css/copy.css" rel="stylesheet" />
+		<link href="css/new.css" rel="stylesheet" />
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	</head>
 	<body>
-		<!-- responsive navbar -->
-		<nav class="navbar container">
-			<a class="navbar-brand" href="#"><img src="im/logo.png" alt="nscc logo" /></a>
-		</nav>
-		<!-- end responsive navbar -->
-
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<!-- start content-->
-					<div class="start-content" id="start-content">
-						<div class="row bg_grey">
-							<div class="col padding-x-15 padding-y-20 flex">
-								<h3>Create your new NSCC Account</h3>
-								<p>
-									Welcome to the NSCC Account Creation Form.<br />
-									<br />
-									Please fill in the form below to create your user account. Please note that it may take up to 7 working days to process your request.
-								</p>
-								<div style="display: flex; flex-direction: row; justify-content: flex-end">
-									<button type="button" class="btn btn-primary"><h4>Get started</h4></button>
-								</div>
-							</div>
-						</div>
+		<div class="new-container container-flex">
+			<navbar>
+				<a class="navbar-brand" href="#"><img src="im/logo.png" alt="nscc logo" /></a>
+			</navbar>
+			<div class="new-row row-flex">
+				<div class="start-content" id="start-content">
+					<h3>Create your new NSCC Account</h3>
+					<p>
+						Welcome to the NSCC Account Creation Form.<br />
+						<br />
+						Please fill in the form below to create your user account.<br class="hide-sm"> Please note that it may take up to 7 working days to process your request.
+					</p>
+					<div class="hide-lg" style="display: flex; flex-direction: row; justify-content: flex-end">
+						<button id="continue0" type="button" class="btn btn-primary"><h4>Get started</h4></button>
 					</div>
-					<!-- end start content -->
 				</div>
-				<div class="col-lg-6">
-					<!-- step form content-->
-					<div id="form-content" class="container form-content" style="display: block">
-						<div class="row">
-							<div class="col padding-x-15 padding-y-20 flex">
-								<!-- start progress bar -->
-								<div class="vert-flex hide-lg">
-									<!-- Step 1 -->
-									<span id="dot-1" class="dot"><h3 class="prevent-select">1</h3></span>
-									<!-- Step 2 -->
-									<div id="progress-line-1" class="progress-line"></div>
-									<span id="dot-2" class="dot"><h3 class="prevent-select">2</h3></span>
-									<!-- Step 3 -->
-									<div id="progress-line-2" class="progress-line"></div>
-									<span id="dot-3" class="dot"><h3 class="prevent-select">3</h3></span>
-									<!-- Step 4 -->
-									<div id="progress-line-3" class="progress-line"></div>
-									<span id="dot-4" class="dot"><h3 class="prevent-select">4</h3></span>
-								</div>
-								<!-- end progress bar -->
-
-								<!-- step one -->
-								<form-block id="step1">
-									<h3>Personal Information</h3>
-									<div class="form-group">
-										<div class="form-floating">
-											<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-											<label for="floatingInput">First name</label>
-										</div>
-										<div class="form-floating">
-											<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-											<label for="floatingInput">Last name</label>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="form-floating">
-											<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-											<label for="floatingInput">Nationality</label>
-										</div>
-										<div class="form-floating">
-											<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-											<label for="floatingInput">Preferred User ID</label>
-										</div>
-									</div>
-
-									<div style="display: flex; flex-direction: row; justify-content: flex-end">
-										<button id="continue1" type="button" class="btn btn-primary hide-lg"><h4>Continue</h4></button>
-									</div>
-									<line class="hide-lg"></line>
-								</form-block>
-								<!-- end step one -->
-								<!-- step two -->
-								<form-block id="step2" style="display: flex">
-									<h3>Organizational Information</h3>
-
-									<div class="form-group">
-										<div class="input-group has-validation">
-											<div class="form-floating">
-												<input type="email" class="form-control is-invalid shadow-none" id="floatingInput" placeholder="name@example.com" />
-												<label for="floatingInput">Email address</label>
-											</div>
-											<div class="invalid-feedback" style="display: block">Please enter a valid email address that is not from a private email domain (e.g. gmail.com, yahoo.com).</div>
-										</div>
-										<div class="form-floating">
-											<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-											<label for="floatingInput">Company</label>
-										</div>
-									</div>
-
-									<div class="form-group">
-										<div class="form-floating">
-											<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-											<label for="floatingInput">Organization / Department</label>
-										</div>
-										<div class="form-floating">
-											<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-											<label for="floatingInput">Designation</label>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="form-floating">
-											<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-											<label for="floatingInput">Contact number</label>
-										</div>
-										<div class="form-floating">
-											<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-											<label for="floatingInput">Email address</label>
-										</div>
-									</div>
-
-									<div style="display: flex; flex-direction: row; justify-content: flex-end">
-										<button id="continue2" type="button" class="btn btn-primary hide-lg"><h4>Continue</h4></button>
-									</div>
-									<line class="hide-lg"></line>
-								</form-block>
-								<!-- end step two -->
-								<!-- step three -->
-								<form-block id="step3" style="display: flex">
-									<h3>Project Information</h3>
-
-									<div class="form-group">
-										<div class="form-floating">
-											<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-											<label for="floatingInput">Project ID (if applicable)</label>
-										</div>
-										<div>
-											<label for="formFile" class="form-label">Upload sponsorship form</label>
-											<input class="form-control" type="file" id="formFile" />
-										</div>
-									</div>
-
-									<div style="display: flex; flex-direction: row; justify-content: flex-end">
-										<button id="continue3" type="button" class="btn btn-primary hide-lg"><h4>Continue</h4></button>
-									</div>
-									<line class="hide-lg"></line>
-								</form-block>
-								<!-- end step three -->
-								<!-- step four -->
-								<form-block id="step4" style="display: flex">
-									<form action="?" method="POST">
-										<div class="g-recaptcha" data-sitekey="6Le_RcMlAAAAAF-Tmm2ezyxMPNfmXVCSDBYBxPvW" data-size="normal"></div>
-									</form>
-
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-										<label class="form-check-label" for="flexCheckDefault">I have read and accept the NSCC<br />terms and conditions and privacy policy.</label>
-									</div>
-
-									<div style="display: flex; flex-direction: row; justify-content: flex-end">
-										<button type="button" class="btn btn-primary"><h4>Create Account</h4></button>
-									</div>
-									<line class="hide-lg"></line>
-								</form-block>
-								<!-- end step four -->
+				<div class="form-content" id="form-content">
+					<div class="progress-bar vert-flex hide-md" id="progress-bar">
+						<span id="dot-1" class="dot"><h3 class="prevent-select">1</h3></span>
+						<div id="progress-line-1" class="progress-line">
+							<div id="progress-line-one" style="display: block; width: 0%; background-color: #e2231a"></div>
+						</div>
+						<span id="dot-2" class="dot"><h3 class="prevent-select">2</h3></span>
+						<div id="progress-line-2" class="progress-line">
+							<div id="progress-line-two" style="display: block; width: 0%; background-color: #e2231a"></div>
+						</div>
+						<span id="dot-3" class="dot"><h3 class="prevent-select">3</h3></span>
+						<div id="progress-line-3" class="progress-line">
+							<div id="progress-line-three" style="display: block; width: 0%; background-color: #e2231a"></div>
+						</div>
+						<span id="dot-4" class="dot"><h3 class="prevent-select">4</h3></span>
+					</div>
+					<div class="step-1 step-content" id="step-1">
+						<h3>Personal Information</h3>
+						<div class="form-group">
+							<div class="form-floating">
+								<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+								<label for="floatingInput">First name</label>
+							</div>
+							<div class="form-floating">
+								<input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+								<label for="floatingPassword">Last name</label>
 							</div>
 						</div>
+						<div class="form-group">
+							<div class="form-floating">
+								<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+								<label for="floatingInput">Nationality</label>
+							</div>
+							<div class="form-floating">
+								<input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+								<label for="floatingPassword">Preferred User ID</label>
+							</div>
+						</div>
+						<div class="hide-md" style="display: flex; flex-direction: row; justify-content: flex-end">
+							<button id="continue1" type="button" class="btn btn-primary"><h4>Continue</h4></button>
+						</div>
+						<line class="hide-md"></line>
 					</div>
-					<!-- end form content -->
+					<div class="step-2 step-content" id="step-2">
+						<h3>Organizational Information</h3>
+						<div class="form-group">
+							<div class="form-floating">
+								<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+								<label for="floatingInput">Company</label>
+							</div>
+							<div class="hide-sm"></div>
+						</div>
+						<div class="form-group">
+							<div class="form-floating">
+								<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+								<label for="floatingInput">Organization / Department</label>
+							</div>
+							<div class="form-floating">
+								<input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+								<label for="floatingPassword">Designation</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-floating">
+								<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+								<label for="floatingInput">Contact number</label>
+							</div>
+							<div class="form-floating">
+								<input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+								<label for="floatingPassword">Email address</label>
+							</div>
+						</div>
+						<div class="hide-md" style="display: flex; flex-direction: row; justify-content: flex-end">
+							<button id="continue2" type="button" class="btn btn-primary"><h4>Continue</h4></button>
+						</div>
+						<line class="hide-md"></line>
+					</div>
+					<div class="step-3 step-content" id="step-3">
+						<h3>Project Information</h3>
+						<div class="form-group">
+							<div class="form-floating">
+								<input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+								<label for="floatingInput">Project ID (if applicable)</label>
+							</div>
+							<div class="form-floating">
+								<input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+								<label for="floatingPassword">Upload sponsorship form</label>
+							</div>
+						</div>
+						<div class="hide-md" style="display: flex; flex-direction: row; justify-content: flex-end">
+							<button id="continue3" type="button" class="btn btn-primary hide-lg"><h4>Continue</h4></button>
+						</div>
+						<line class="hide-md"></line>
+					</div>
+					<div class="step-4 step-content" id="step-4">
+						<form action="?" method="POST">
+							<div class="g-recaptcha" data-sitekey="6Le_RcMlAAAAAF-Tmm2ezyxMPNfmXVCSDBYBxPvW" data-size="normal"></div>
+						</form>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+							<label class="form-check-label" for="flexCheckDefault">I have read and accept the NSCC terms and conditions and privacy policy.</label>
+						</div>
+
+						<div style="display: flex; flex-direction: row; justify-content: flex-end">
+							<button type="button" class="btn btn-primary"><h4>Create Account</h4></button>
+						</div>
+						<line class="hide-md"></line>
+					</div>
 				</div>
 			</div>
 		</div>
 
 		<script>
-			const button = document.querySelector(".btn-primary")
+			// Define variables for all elements
+			const startContent = document.getElementById("start-content")
+			const formContent = document.getElementById("form-content")
+			const progressBar = document.getElementById("progress-bar")
+			const step1 = document.getElementById("step-1")
+			const step2 = document.getElementById("step-2")
+			const step3 = document.getElementById("step-3")
+			const step4 = document.getElementById("step-4")
+			const continue0Btn = document.getElementById("continue0")
+			const continue1Btn = document.getElementById("continue1")
+			const continue2Btn = document.getElementById("continue2")
+			const continue3Btn = document.getElementById("continue3")
 
-			button.addEventListener("click", () => {
-				document.getElementById("start-content").style.display = "none"
-				document.getElementById("form-content").style.display = "block"
-				window.location.href = "#step1"
-			})
+			let currentState = 0 // Initialize current state to state 0
+			let mobileState = 0 // Initialize current state to state 0
+
+			function updateState(currentState) {
+				// Add event listeners for each button to change the state accordingly
+				if (currentState === 0) {
+					startContent.style.display = "flex"
+					formContent.style.display = "none"
+				}
+
+				if (currentState === 1) {
+					startContent.style.display = "none"
+					formContent.style.display = "flex"
+					progressBar.style.display = "flex"
+					step1.style.display = "flex"
+					step2.style.display = "none"
+					step3.style.display = "none"
+					step4.style.display = "none"
+					setProgressState(1)
+				}
+
+				if (currentState === 2) {
+					startContent.style.display = "none"
+					formContent.style.display = "flex"
+					progressBar.style.display = "flex"
+					step1.style.display = "none"
+					step2.style.display = "flex"
+					step3.style.display = "none"
+					step4.style.display = "none"
+					setProgressState(2)
+				}
+
+				if (currentState === 3) {
+					startContent.style.display = "none"
+					formContent.style.display = "flex"
+					progressBar.style.display = "flex"
+					step1.style.display = "none"
+					step2.style.display = "none"
+					step3.style.display = "flex"
+					step4.style.display = "none"
+					setProgressState(3)
+				}
+
+				if (currentState === 4) {
+					startContent.style.display = "none"
+					formContent.style.display = "flex"
+					progressBar.style.display = "flex"
+					step1.style.display = "none"
+					step2.style.display = "none"
+					step3.style.display = "none"
+					step4.style.display = "flex"
+					setProgressState(4)
+				}
+
+				if (currentState === 5) {
+					startContent.style.display = "none"
+					formContent.style.display = "flex"
+					progressBar.style.display = "flex"
+					step1.style.display = "flex"
+					step2.style.display = "flex"
+					step3.style.display = "flex"
+					step4.style.display = "flex"
+				}
+
+				if (currentState === 6) {
+					startContent.style.display = "flex"
+					formContent.style.display = "flex"
+					progressBar.style.display = "flex"
+					step1.style.display = "flex"
+					step2.style.display = "flex"
+					step3.style.display = "flex"
+					step4.style.display = "flex"
+				}
+			}
 
 			// Get the viewport width at page load
 			var viewportWidth = window.innerWidth || document.documentElement.clientWidth
+
+			if (viewportWidth > 992) {
+				updateState(6)
+			} else {
+				updateState(0)
+			}
+
+			continue0Btn.addEventListener("click", function () {
+				var viewportWidth = window.innerWidth || document.documentElement.clientWidth
+				if (viewportWidth > 768) {
+					updateState(5)
+				} else {
+					updateState(1)
+				}
+				mobileState = 1
+			})
+
+			continue1Btn.addEventListener("click", function () {
+				updateState(2)
+				mobileState = 2
+			})
+			continue2Btn.addEventListener("click", function () {
+				updateState(3)
+				mobileState = 3
+			})
+			continue3Btn.addEventListener("click", function () {
+				updateState(4)
+				mobileState = 4
+			})
 
 			// Add event listener to check viewport size on resize
 			window.addEventListener("resize", function () {
@@ -205,12 +274,20 @@
 				// If viewport width is greater than 1024px (laptop size)
 				if (viewportWidth > 992) {
 					// Show the element with ID "start-content"
-					document.getElementById("start-content").style.display = "block"
+					updateState(6)
+				} else if (viewportWidth > 768) {
+					if (mobileState === 0) {
+						updateState(0)
+					} else {
+						updateState(5)
+					}
 				} else {
 					// Hide the element with ID "start-content"
-					document.getElementById("start-content").style.display = "none"
+					updateState(mobileState)
 				}
 			})
+
+			// progress bar
 
 			// Store the progress elements in an array
 			const progressElems = [document.getElementById("dot-1"), document.getElementById("progress-line-1"), document.getElementById("dot-2"), document.getElementById("progress-line-2"), document.getElementById("dot-3"), document.getElementById("progress-line-3"), document.getElementById("dot-4")]
@@ -225,42 +302,43 @@
 					if (state === 1) {
 						if (i === 0) {
 							progressElems[i].classList.add("dot-red")
-							progressElems[i].classList.add("progress-line-red")
 						} else {
 							progressElems[i].classList.remove("dot-red")
-							progressElems[i].classList.remove("progress-line-red")
 						}
+						removeProgressBar(1)
+						removeProgressBar(2)
+						removeProgressBar(3)
 					}
 					// If state 2 is selected, change dot1, line1, and dot2 to red, and everything else to gray
 					if (state === 2) {
 						if (i === 0 || i === 1 || i === 2) {
 							progressElems[i].classList.add("dot-red")
-							if (i === 1) {
-								progressElems[i].classList.add("progress-line-red")
-							}
 						} else {
 							progressElems[i].classList.remove("dot-red")
-							progressElems[i].classList.remove("progress-line-red")
 						}
+						startProgressBar(1)
+						removeProgressBar(2)
+						removeProgressBar(3)
 					}
 					// If state 3 is selected, change dot1, line1, dot2, and line2 to red, and everything else to gray
 					if (state === 3) {
 						if (i === 0 || i === 1 || i === 2 || i === 3 || i === 4) {
 							progressElems[i].classList.add("dot-red")
-							if (i === 1 || i === 3) {
-								progressElems[i].classList.add("progress-line-red")
-							}
 						} else {
 							progressElems[i].classList.remove("dot-red")
-							progressElems[i].classList.remove("progress-line-red")
 						}
+						setProgressBar(1)
+						startProgressBar(2)
+						removeProgressBar(3)
 					}
 					// If state 4 is selected, change everything to red
 					if (state === 4) {
 						progressElems[i].classList.add("dot-red")
 						if (i % 2 === 1) {
-							progressElems[i].classList.add("progress-line-red")
 						}
+						setProgressBar(1)
+						setProgressBar(2)
+						startProgressBar(3)
 					}
 				}
 			}
@@ -268,49 +346,100 @@
 			// Example usage: set the progress bar to state 3
 			setProgressState(1)
 
-			document.getElementById("continue1").addEventListener("click", function () {
-				nextStep("step1", "step2")
-				setProgressState(2)
-				window.location.href = "#step2"
-			})
-
-			document.getElementById("continue2").addEventListener("click", function () {
-				nextStep("step2", "step3")
-				setProgressState(3)
-				window.location.href = "#step3"
-			})
-
-			document.getElementById("continue3").addEventListener("click", function () {
-				nextStep("step3", "step4")
-				setProgressState(4)
-				window.location.href = "#step4"
-			})
-
-			function nextStep(currentStep, nextStep) {
-				document.getElementById(currentStep).style.display = "none"
-				document.getElementById(nextStep).style.display = "flex"
-			}
-
 			const dot1 = document.getElementById("dot-1")
 
 			dot1.addEventListener("click", () => {
-				setProgressState(1)
+				updateState(1)
+				mobileState = 1
 			})
 			const dot2 = document.getElementById("dot-2")
 
 			dot2.addEventListener("click", () => {
-				setProgressState(2)
+				updateState(2)
+				mobileState = 2
 			})
 			const dot3 = document.getElementById("dot-3")
 
 			dot3.addEventListener("click", () => {
-				setProgressState(3)
+				updateState(3)
+				mobileState = 3
 			})
 			const dot4 = document.getElementById("dot-4")
 
 			dot4.addEventListener("click", () => {
-				setProgressState(4)
+				updateState(4)
+				mobileState = 4
 			})
+
+			function startProgressBar(bar) {
+				// Get the progress bar element
+				const progressBar1 = document.getElementById("progress-line-one")
+				const progressBar2 = document.getElementById("progress-line-two")
+				const progressBar3 = document.getElementById("progress-line-three")
+
+				// Set the initial width to 0%
+				let width = 0
+
+				// Define the interval time in milliseconds
+				const intervalTime = 2
+
+				// Define the increment value for each interval
+				const increment = 1
+
+				// Set an interval to update the progress bar
+				const interval = setInterval(function () {
+					// Increment the width by the increment value
+					width += increment
+					// Set the width of the progress bar element
+					if (bar === 1) {
+						progressBar1.style.width = width + "%"
+					}
+					if (bar === 2) {
+						progressBar2.style.width = width + "%"
+					}
+					if (bar === 3) {
+						progressBar3.style.width = width + "%"
+					}
+
+					// If the width is equal to or greater than 100%, stop the interval
+					if (width >= 100) {
+						clearInterval(interval)
+					}
+				}, intervalTime)
+			}
+
+			function removeProgressBar(bar) {
+				// Get the progress bar element
+				const progressBar1 = document.getElementById("progress-line-one")
+				const progressBar2 = document.getElementById("progress-line-two")
+				const progressBar3 = document.getElementById("progress-line-three")
+
+				if (bar === 1) {
+					progressBar1.style.width = 0 + "%"
+				}
+				if (bar === 2) {
+					progressBar2.style.width = 0 + "%"
+				}
+				if (bar === 3) {
+					progressBar3.style.width = 0 + "%"
+				}
+			}
+			function setProgressBar(bar) {
+				// Get the progress bar element
+				const progressBar1 = document.getElementById("progress-line-one")
+				const progressBar2 = document.getElementById("progress-line-two")
+				const progressBar3 = document.getElementById("progress-line-three")
+
+				if (bar === 1) {
+					progressBar1.style.width = 100 + "%"
+				}
+				if (bar === 2) {
+					progressBar2.style.width = 100 + "%"
+				}
+				if (bar === 3) {
+					progressBar3.style.width = 100 + "%"
+				}
+			}
 		</script>
 
 		<!-- bootstrap core js -->

@@ -64,41 +64,30 @@
 					if (state === 1) {
 						if (i === 0) {
 							progressElems[i].classList.add("dot-red")
-							progressElems[i].classList.add("progress-line-red")
 						} else {
 							progressElems[i].classList.remove("dot-red")
-							progressElems[i].classList.remove("progress-line-red")
 						}
 					}
 					// If state 2 is selected, change dot1, line1, and dot2 to red, and everything else to gray
 					if (state === 2) {
 						if (i === 0 || i === 1 || i === 2) {
 							progressElems[i].classList.add("dot-red")
-							if (i === 1) {
-								progressElems[i].classList.add("progress-line-red")
-							}
 						} else {
 							progressElems[i].classList.remove("dot-red")
-							progressElems[i].classList.remove("progress-line-red")
 						}
 					}
 					// If state 3 is selected, change dot1, line1, dot2, and line2 to red, and everything else to gray
 					if (state === 3) {
 						if (i === 0 || i === 1 || i === 2 || i === 3 || i === 4) {
 							progressElems[i].classList.add("dot-red")
-							if (i === 1 || i === 3) {
-								progressElems[i].classList.add("progress-line-red")
-							}
 						} else {
 							progressElems[i].classList.remove("dot-red")
-							progressElems[i].classList.remove("progress-line-red")
 						}
 					}
 					// If state 4 is selected, change everything to red
 					if (state === 4) {
 						progressElems[i].classList.add("dot-red")
 						if (i % 2 === 1) {
-							progressElems[i].classList.add("progress-line-red")
 						}
 					}
 				}
@@ -183,35 +172,15 @@
 				const progressBar2 = document.getElementById("progress-line-two")
 				const progressBar3 = document.getElementById("progress-line-three")
 
-				// Set the initial width to 0%
-				let width = 100
-
-				// Define the interval time in milliseconds
-				const intervalTime = 2
-
-				// Define the increment value for each interval
-				const increment = 1
-
-				// Set an interval to update the progress bar
-				const interval = setInterval(function () {
-					// Increment the width by the increment value
-					width -= 100
-					// Set the width of the progress bar element
-					if (bar === 1) {
-						progressBar1.style.width = 0 + "%"
-					}
-					if (bar === 2) {
-						progressBar2.style.width = 0 + "%"
-					}
-					if (bar === 3) {
-						progressBar3.style.width = 0 + "%"
-					}
-
-					// If the width is equal to or greater than 100%, stop the interval
-					if (width <= 0) {
-						clearInterval(interval)
-					}
-				}, intervalTime)
+				if (bar === 1) {
+					progressBar1.style.width = 0 + "%"
+				}
+				if (bar === 2) {
+					progressBar2.style.width = 0 + "%"
+				}
+				if (bar === 3) {
+					progressBar3.style.width = 0 + "%"
+				}
 			}
 			function setProgressBar(bar) {
 				// Get the progress bar element
@@ -219,35 +188,15 @@
 				const progressBar2 = document.getElementById("progress-line-two")
 				const progressBar3 = document.getElementById("progress-line-three")
 
-				// Set the initial width to 0%
-				let width = 0
-
-				// Define the interval time in milliseconds
-				const intervalTime = 2
-
-				// Define the increment value for each interval
-				const increment = 1
-
-				// Set an interval to update the progress bar
-				const interval = setInterval(function () {
-					// Increment the width by the increment value
-					width += 100
-					// Set the width of the progress bar element
-					if (bar === 1) {
-						progressBar1.style.width = 100 + "%"
-					}
-					if (bar === 2) {
-						progressBar2.style.width = 100 + "%"
-					}
-					if (bar === 3) {
-						progressBar3.style.width = 100 + "%"
-					}
-
-					// If the width is equal to or greater than 100%, stop the interval
-					if (width <= 0) {
-						clearInterval(interval)
-					}
-				}, intervalTime)
+				if (bar === 1) {
+					progressBar1.style.width = 100 + "%"
+				}
+				if (bar === 2) {
+					progressBar2.style.width = 100 + "%"
+				}
+				if (bar === 3) {
+					progressBar3.style.width = 100 + "%"
+				}
 			}
 		</script>
 
