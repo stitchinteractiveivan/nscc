@@ -1,0 +1,151 @@
+/********** color **********/
+:root {
+	--color-offwhite: #e5e5e5;
+	--color-red: #e2231a;
+	--color-green: #cbcdc2;
+	--color-cool-grey: #788691;
+	--color-blue: #275da5;
+	--color-error-red: #f4333d;
+	--color-white: #ffffff;
+	--color-black: #000000;
+
+	--navbar-height: 61.6px;
+}
+
+/********** fonts **********/
+@font-face {
+	font-family: "d-dindin-bold";
+	src: url("../fonts/d-din-bold-webfont.woff2") format("woff2"), url("../fonts/d-din-bold-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+
+	margin: 12px 15px;
+	padding: 0;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	row-gap: 12px;
+
+	height: 100vh;
+	overflow: hidden;
+}
+
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1,
+p,
+.p {
+	margin: 0;
+	padding: 0;
+}
+
+h3 {
+	font-family: "d-dindin-bold", serif;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+h4 {
+	font-family: "d-dindin-bold", serif;
+	font-size: 12px;
+	line-height: 13px;
+
+	display: flex;
+	align-items: center;
+	text-align: center;
+
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+}
+
+/********** flex **********/
+
+.container-flex {
+}
+
+.navbar-brand img {
+	width: 160px;
+	height: auto;
+}
+
+/********** laptops **********/
+@media (min-width: 992px) {
+	body {
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	.container-flex {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		padding: 30px;
+	}
+
+	.row-flex {
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: 1fr;
+		gap: 20px;
+	}
+
+	.start-content {
+		flex-grow: 1;
+		height: calc(100vh - var(--navbar-height) - 90px);
+		color: var(--color-white);
+		background-color: var(--color-red);
+		overflow-y: auto;
+
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		padding: 100px 50px;
+	}
+
+	.form-content {
+		flex-grow: 1;
+		background-color: var(--color-offwhite);
+		height: calc(100vh - var(--navbar-height) - 90px);
+		overflow: scroll;
+
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+
+		padding: 70px 50px;
+	}
+
+	.form-group {
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: 1fr;
+		gap: 10px;
+	}
+
+	.step-content {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.hide-lg {
+		display: none;
+	}
+}

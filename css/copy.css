@@ -29,6 +29,9 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	row-gap: 12px;
+
+	height: 100vh;
+	overflow: hidden;
 }
 
 h6,
@@ -275,8 +278,10 @@ line {
 		gap: 10px;
 	}
 
-	.form-floating {
+	.form-floating .formFile {
 		width: 100%;
+		display: flex;
+		align-self: stretch;
 	}
 
 	.hide-lg {
@@ -286,6 +291,12 @@ line {
 	.bg_grey {
 		background: var(--color-red);
 		color: var(--color-white);
+
+		height: 100vh;
+	}
+
+	.start-content {
+		height: 100vh;
 	}
 
 	.form-content {
