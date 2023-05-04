@@ -26,7 +26,8 @@
 					<p>
 						Welcome to the NSCC Account Creation Form.<br />
 						<br />
-						Please fill in the form below to create your user account.<br class="hide-sm"> Please note that it may take up to 7 working days to process your request.
+						Please fill in the form below to create your user account.<br class="hide-sm" />
+						Please note that it may take up to 7 working days to process your request.
 					</p>
 					<div class="hide-lg" style="display: flex; flex-direction: row; justify-content: flex-end">
 						<button id="continue0" type="button" class="btn btn-primary"><h4>Get started</h4></button>
@@ -349,26 +350,26 @@
 			const dot1 = document.getElementById("dot-1")
 
 			dot1.addEventListener("click", () => {
-				updateState(1)
 				mobileState = 1
+				updateState(1)
 			})
 			const dot2 = document.getElementById("dot-2")
 
 			dot2.addEventListener("click", () => {
-				updateState(2)
 				mobileState = 2
+				updateState(2)
 			})
 			const dot3 = document.getElementById("dot-3")
 
 			dot3.addEventListener("click", () => {
-				updateState(3)
 				mobileState = 3
+				updateState(3)
 			})
 			const dot4 = document.getElementById("dot-4")
 
 			dot4.addEventListener("click", () => {
-				updateState(4)
 				mobileState = 4
+				updateState(4)
 			})
 
 			function startProgressBar(bar) {
@@ -379,6 +380,7 @@
 
 				// Set the initial width to 0%
 				let width = 0
+				let savedMobileState = mobileState
 
 				// Define the interval time in milliseconds
 				const intervalTime = 2
@@ -404,6 +406,32 @@
 					// If the width is equal to or greater than 100%, stop the interval
 					if (width >= 100) {
 						clearInterval(interval)
+					}
+
+					if (savedMobileState > mobileState) {
+						if (bar === 1) {
+							progressBar1.style.width = 0 + "%"
+						}
+						if (bar === 2) {
+							progressBar2.style.width = 0 + "%"
+						}
+						if (bar === 3) {
+							progressBar3.style.width = 0 + "%"
+						}
+						return;
+					}
+
+					if (savedMobileState < mobileState) {
+						if (bar === 1) {
+							progressBar1.style.width = 100 + "%"
+						}
+						if (bar === 2) {
+							progressBar2.style.width = 100 + "%"
+						}
+						if (bar === 3) {
+							progressBar3.style.width = 100 + "%"
+						}
+						return;
 					}
 				}, intervalTime)
 			}
