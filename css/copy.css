@@ -1,3 +1,16 @@
+/********** color **********/
+:root {
+	--color-offwhite: #e5e5e5;
+	--color-red: #e2231a;
+	--color-green: #cbcdc2;
+	--color-cool-grey: #788691;
+	--color-blue: #275da5;
+	--color-error-red: #f4333d;
+	--color-white: #ffffff;
+	--color-black: #000000;
+}
+
+/********** fonts **********/
 @font-face {
 	font-family: "d-dindin-bold";
 	src: url("../fonts/d-din-bold-webfont.woff2") format("woff2"), url("../fonts/d-din-bold-webfont.woff") format("woff");
@@ -54,17 +67,7 @@ h4 {
 	margin-bottom: 0rem;
 }
 
-.btn-primary {
-	--bs-btn-padding-y: 7px;
-	--bs-btn-padding-x: 20px;
-	background: #e2231a;
-	border-radius: 5px;
-	border: #e2231a;
-}
-
-.container {
-}
-
+/********** flex **********/
 .flex {
 	display: flex;
 	flex-direction: column;
@@ -80,56 +83,7 @@ h4 {
 	align-items: center;
 }
 
-.dot {
-	height: 40px;
-	width: 40px;
-	background-color: #e5e5e5;
-	border-radius: 50%;
-	display: inline-block;
-
-	color: #ffffff;
-
-	border-style: solid;
-	border-width: 1.5px;
-	border-color: #ffffff;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.dot-red {
-	background-color: #e2231a;
-}
-
-.progress-line {
-	display: flex;
-
-	height: 1.5px;
-	background-color: #e5e5e5;
-	flex-grow: 1;
-}
-
-.progress-line-red {
-	background-color: #e2231a;
-}
-
-form-block {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	row-gap: 10px;
-}
-
-line {
-	height: 1px;
-	background-color: #000000;
-}
-
-.navbar-brand img {
-	width: 50%;
-}
-
+/********** padding **********/
 .padding-x-15 {
 	padding-left: 15px;
 	padding-right: 15px;
@@ -140,8 +94,18 @@ line {
 	padding-bottom: 20px;
 }
 
-.bg_grey {
-	background: #e5e5e5;
+/********** button **********/
+.btn-primary {
+	--bs-btn-padding-y: 7px;
+	--bs-btn-padding-x: 20px;
+	background: var(--color-red);
+	border-radius: 5px;
+	border: var(--color-red);
+}
+
+/********** navbar **********/
+.navbar-brand img {
+	width: 50%;
 }
 
 .navbar {
@@ -156,10 +120,124 @@ line {
 	--bs-gutter-y: 0;
 }
 
-.prevent-select {
-	-webkit-user-select: none; /* Safari */
-	-ms-user-select: none; /* IE 10 and IE 11 */
-	user-select: none; /* Standard syntax */
+/********** container **********/
+.bg_grey {
+	background: var(--color-offwhite);
+}
+
+/********** progress bar **********/
+.dot {
+	height: 40px;
+	width: 40px;
+	background-color: var(--color-offwhite);
+	border-radius: 50%;
+	display: inline-block;
+
+	color: var(--color-white);
+
+	border-style: solid;
+	border-width: 1.5px;
+	border-color: var(--color-white);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dot-red {
+	background-color: var(--color-red);
+}
+
+.progress-line {
+	display: flex;
+
+	height: 1.5px;
+	background-color: var(--color-offwhite);
+	flex-grow: 1;
+}
+
+/* Set the size of the progress bar */
+.progress-bar {
+	width: 400px;
+	height: 100px;
+	position: relative;
+}
+
+/* Style the circles */
+.circle {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 2px solid var(--color-offwhite);
+	background-color: var(--color-white);
+	display: inline-block;
+	position: absolute;
+	top: 25px;
+	font-size: 24px;
+	text-align: center;
+	line-height: 50px;
+}
+
+/* Style the numbers inside the circles */
+.circle span {
+	position: relative;
+	top: -2px;
+}
+
+/* Style the lines between the circles */
+.line {
+	width: 100px;
+	height: 2px;
+	background-color: var(--color-offwhite);
+	position: absolute;
+	top: 48px;
+	left: 25px;
+	z-index: -1;
+}
+
+/********** form **********/
+form-block {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	row-gap: 10px;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	row-gap: 10px;
+}
+
+line {
+	height: 1px;
+	background-color: var(--color-black);
+}
+
+/********** form field **********/
+.form-control {
+	box-shadow: none !important;
+}
+
+.form-control:focus {
+	border-width: 1.5px;
+	border-color: var(--color-blue);
+}
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+	border-width: 1.5px;
+	border-color: var(--color-error-red);
+	fill: var(--color-error-red);
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23f4333d'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23f4333d' stroke='none'/%3e%3c/svg%3e");
+}
+
+.invalid-feedback {
+	color: var(--color-error-red);
+	margin-top: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 /********** tablets **********/
@@ -181,78 +259,46 @@ line {
 	.navbar-brand {
 		padding-top: 14px;
 	}
+
+	.form-block {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		row-gap: 10px;
+		flex-wrap: wrap;
+	}
+
+	.form-group {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 10px;
+	}
+
+	.form-floating {
+		width: 100%;
+	}
+
+	.hide-lg {
+		display: none;
+	}
+
+	.bg_grey {
+		background: var(--color-red);
+		color: var(--color-white);
+	}
+
+	.form-content {
+		padding-top: 25px;
+		padding-bottom: 100px;
+		padding-left: 50px;
+		padding-right: 50px;
+	}
 }
 
-/* Set the size of the progress bar */
-.progress-bar {
-	width: 400px;
-	height: 100px;
-	position: relative;
-}
-
-/* Style the circles */
-.circle {
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	border: 2px solid #ccc;
-	background-color: #fff;
-	display: inline-block;
-	position: absolute;
-	top: 25px;
-	font-size: 24px;
-	text-align: center;
-	line-height: 50px;
-}
-
-/* Style the numbers inside the circles */
-.circle span {
-	position: relative;
-	top: -2px;
-}
-
-/* Style the lines between the circles */
-.line {
-	width: 100px;
-	height: 2px;
-	background-color: #ccc;
-	position: absolute;
-	top: 48px;
-	left: 25px;
-	z-index: -1;
-}
-
-/* Style the first circle */
-.circle-1 {
-	left: 25px;
-}
-
-/* Style the second circle */
-.circle-2 {
-	left: 125px;
-}
-
-/* Style the third circle */
-.circle-3 {
-	left: 225px;
-}
-
-/* Style the fourth circle */
-.circle-4 {
-	left: 325px;
-}
-
-/* Style the first line */
-.line-1 {
-	left: 75px;
-}
-
-/* Style the second line */
-.line-2 {
-	left: 175px;
-}
-
-/* Style the third line */
-.line-3 {
-	left: 275px;
+/********** utilities **********/
+.prevent-select {
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
 }
