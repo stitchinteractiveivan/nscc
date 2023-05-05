@@ -1,3 +1,18 @@
+/********** color **********/
+:root {
+	--color-offwhite: #e5e5e5;
+	--color-red: #e2231a;
+	--color-green: #cbcdc2;
+	--color-cool-grey: #788691;
+	--color-blue: #275da5;
+	--color-error-red: #f4333d;
+	--color-white: #ffffff;
+	--color-black: #000000;
+
+	--navbar-height: 62.1px;
+}
+
+/********** fonts **********/
 @font-face {
 	font-family: "d-dindin-bold";
 	src: url("../fonts/d-din-bold-webfont.woff2") format("woff2"), url("../fonts/d-din-bold-webfont.woff") format("woff");
@@ -8,6 +23,17 @@
 body {
 	font-family: "Open Sans", Arial, Helvetica, sans-serif;
 	font-size: 14px;
+
+	margin: 12px 15px;
+	padding: 0;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	row-gap: 12px;
+
+	height: 100vh;
+	overflow: hidden;
 }
 
 h6,
@@ -24,7 +50,8 @@ h1,
 .h1,
 p,
 .p {
-	margin-bottom: 0;
+	margin: 0;
+	padding: 0;
 }
 
 h3 {
@@ -46,22 +73,7 @@ h4 {
 	margin-bottom: 0rem;
 }
 
-.btn-primary {
-	--bs-btn-padding-y: 7px;
-	--bs-btn-padding-x: 20px;
-	background: #e2231a;
-	border-radius: 5px;
-	border: #e2231a;
-}
-
-.container {
-	padding-right: calc(var(--bs-gutter-x) * 0.5);
-	padding-left: calc(var(--bs-gutter-x) * 0.5);
-	width: auto;
-	margin-right: 15px;
-	margin-left: 15px;
-}
-
+/********** flex **********/
 .flex {
 	display: flex;
 	flex-direction: column;
@@ -69,124 +81,334 @@ h4 {
 	row-gap: 30px;
 }
 
-.navbar-brand {
-	padding-top: 2px;
+.vert-flex {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	align-items: center;
 }
 
+/********** navbar **********/
 .navbar-brand img {
-	width: 50%;
+	width: 160px;
+	height: auto;
 }
 
-.padding-x-15 {
+/********** button **********/
+.btn-primary {
+	--bs-btn-padding-y: 7px;
+	--bs-btn-padding-x: 20px;
+	background: var(--color-red);
+	border-radius: 5px;
+	border: var(--color-red);
+}
+
+.form-check-label {
+	display: flex;
 	padding-left: 15px;
-	padding-right: 15px;
 }
 
-.padding-y-20 {
-	padding-top: 20px;
-	padding-bottom: 20px;
+.form-check-input {
+	width: 25px;
+	height: 25px;
+	box-shadow: none !important;
 }
 
-.bg_grey {
-	background: #e5e5e5;
+.form-check-input:focus {
+	border-width: 1.5px;
+	border-color: var(--color-blue);
+	background-color: var(--color-offwhite);
 }
 
-.navbar .container {
-	/* remove margin */
-	padding: 0;
+.form-check-input:checked {
+	background-color: var(--color-blue);
+}
+
+/********** line **********/
+line {
+	height: 1px;
+	background-color: var(--color-black);
+}
+
+/********** progress bar **********/
+.dot {
+	height: 40px;
+	width: 40px;
+	background-color: var(--color-offwhite);
+	border-radius: 50%;
+	display: inline-block;
+
+	color: var(--color-white);
+
+	border-style: solid;
+	border-width: 1.5px;
+	border-color: var(--color-white);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dot-red {
+	background-color: var(--color-red);
+}
+
+.progress-line {
+	display: flex;
+
+	height: 1.5px;
+	background-color: var(--color-offwhite);
+	flex-grow: 1;
+}
+
+/* Set the size of the progress bar */
+.progress-bar {
+	width: 100%;
+}
+
+/********** form field **********/
+.form-control {
+	box-shadow: none !important;
+	border-width: 1px;
+	border-color: var(--color-offwhite);
+}
+
+.form-control:focus {
+	border-width: 1.5px;
+	border-color: var(--color-blue);
+}
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+	border-width: 1.5px;
+	border-color: var(--color-error-red);
+	fill: var(--color-error-red);
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23f4333d'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23f4333d' stroke='none'/%3e%3c/svg%3e");
+}
+
+.invalid-feedback {
+	display: none;
+	color: var(--color-error-red);
+	margin-top: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.form-label {
+	margin-top: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+/********** mobile **********/
+body {
+	height: 100vh;
+	overflow: auto;
+	margin: 0;
+}
+
+.container-flex {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+
+	padding: 12px 15px;
+}
+
+.row-flex {
+	display: grid;
+	grid-auto-flow: row;
+	grid-auto-columns: 1fr;
+	gap: 20px;
+}
+
+.row-flex-max {
+	display: grid;
+	grid-auto-flow: row;
+	grid-auto-columns: 1fr;
+	width: 100%;
+}
+
+.start-content {
+	flex-grow: 1;
+	color: var(--color-black);
+	background-color: var(--color-offwhite);
+	overflow-y: auto;
+
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	padding: 50px 25px;
+}
+
+.form-content {
+	flex-grow: 1;
+	overflow-y: auto;
+
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	padding: 25px 15px;
+}
+
+.form-group {
+	display: grid;
+	grid-auto-flow: row;
+	grid-auto-columns: 1fr;
+	gap: 10px;
+}
+
+.step-content {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.hide-sm {
+	display: none;
 }
 
 /********** tablets **********/
 @media (min-width: 768px) {
-	.navbar .container {
-		/* remove margin */
-		margin: 0 10px;
+	body {
+		height: 100vh;
+		overflow: auto;
+		margin: 0;
 	}
-	.navbar-brand {
-		padding-top: 6px;
+
+	.container-flex {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+
+		padding: 16px 22px;
+	}
+
+	.row-flex {
+		display: grid;
+		grid-auto-flow: row;
+		grid-auto-columns: 1fr;
+		gap: 20px;
+	}
+
+	.start-content {
+		flex-grow: 1;
+		color: var(--color-black);
+		background-color: var(--color-offwhite);
+		overflow-y: auto;
+
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		padding: 75px 35px;
+	}
+
+	.form-content {
+		flex-grow: 1;
+		background-color: var(--color-white);
+		overflow: auto;
+
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+
+		padding: 70px 50px;
+	}
+
+	.form-group {
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: 1fr;
+		gap: 10px;
+	}
+
+	.hide-md {
+		display: none !important;
+	}
+
+	.hide-sm {
+		display: block;
 	}
 }
 
 /********** laptops **********/
 @media (min-width: 992px) {
-	.navbar .container {
-		margin: 0 18px;
+	body {
+		height: 100vh;
+		overflow: none;
+		margin: 0;
 	}
-	.navbar-brand {
-		padding-top: 14px;
+
+	.container-flex {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		padding: 30px;
+	}
+
+	.row-flex {
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: 1fr;
+		gap: 20px;
+	}
+	.start-content {
+		flex-grow: 1;
+		height: calc(100vh - var(--navbar-height) - 80px);
+		color: var(--color-white);
+		background-color: var(--color-red);
+		overflow-y: auto;
+
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		padding: 100px 50px;
+	}
+	.form-content {
+		height: calc(100vh - var(--navbar-height) - 80px);
+		overflow: scroll;
+	}
+	.hide-md {
+		display: none !important;
+	}
+	.hide-lg {
+		display: none !important;
+	}
+	.hide-sm {
+		display: block;
 	}
 }
 
-/* Set the size of the progress bar */
-.progress-bar {
-	width: 400px;
-	height: 100px;
-	position: relative;
+/********** utilities **********/
+.prevent-select {
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
 }
 
-/* Style the circles */
-.circle {
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	border: 2px solid #ccc;
-	background-color: #fff;
-	display: inline-block;
+/********** overlay **********/
+.overlay-container {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.white-box {
 	position: absolute;
-	top: 25px;
-	font-size: 24px;
-	text-align: center;
-	line-height: 50px;
-}
-
-/* Style the numbers inside the circles */
-.circle span {
-	position: relative;
-	top: -2px;
-}
-
-/* Style the lines between the circles */
-.line {
-	width: 100px;
-	height: 2px;
-	background-color: #ccc;
-	position: absolute;
-	top: 48px;
-	left: 25px;
-	z-index: -1;
-}
-
-/* Style the first circle */
-.circle-1 {
-	left: 25px;
-}
-
-/* Style the second circle */
-.circle-2 {
-	left: 125px;
-}
-
-/* Style the third circle */
-.circle-3 {
-	left: 225px;
-}
-
-/* Style the fourth circle */
-.circle-4 {
-	left: 325px;
-}
-
-/* Style the first line */
-.line-1 {
-	left: 75px;
-}
-
-/* Style the second line */
-.line-2 {
-	left: 175px;
-}
-
-/* Style the third line */
-.line-3 {
-	left: 275px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 20px;
+	border-radius: 5px;
 }
