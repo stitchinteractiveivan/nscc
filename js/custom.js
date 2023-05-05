@@ -10,6 +10,9 @@ const continue0Btn = document.getElementById("continue0")
 const continue1Btn = document.getElementById("continue1")
 const continue2Btn = document.getElementById("continue2")
 const continue3Btn = document.getElementById("continue3")
+const back1Btn = document.getElementById("back1")
+const back2Btn = document.getElementById("back2")
+const back3Btn = document.getElementById("back3")
 
 let currentState = 0 // Initialize current state to state 0
 let mobileState = 0 // Initialize current state to state 0
@@ -89,11 +92,15 @@ function updateState(currentState) {
 // Get the viewport width at page load
 var viewportWidth = window.innerWidth || document.documentElement.clientWidth
 
+// set viewport on load
+
 if (viewportWidth > 992) {
 	updateState(6)
 } else {
 	updateState(0)
 }
+
+// state management
 
 continue0Btn.addEventListener("click", function () {
 	var viewportWidth = window.innerWidth || document.documentElement.clientWidth
@@ -116,6 +123,21 @@ continue2Btn.addEventListener("click", function () {
 continue3Btn.addEventListener("click", function () {
 	mobileState = 4
 	updateState(4)
+})
+
+back1Btn.addEventListener("click", function () {
+	mobileState = 1
+	updateState(1)
+})
+
+back2Btn.addEventListener("click", function () {
+	mobileState = 2
+	updateState(2)
+})
+
+back3Btn.addEventListener("click", function () {
+	mobileState = 3
+	updateState(3)
 })
 
 // Add event listener to check viewport size on resize

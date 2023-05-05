@@ -104,6 +104,29 @@ h4 {
 	border: var(--color-red);
 }
 
+.btn-back {
+	display: flex;
+	flex-direction: row;
+	gap: 2px;
+
+	padding: 7px 5px;
+}
+
+.btn-back > h4 {
+	color: var(--color-black);
+	opacity: 25%;
+}
+
+.btn-back > img {
+	padding-top: 2px;
+}
+
+.button-group {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
 .form-check-label {
 	display: flex;
 	padding-left: 15px;
@@ -162,7 +185,6 @@ line {
 	flex-grow: 1;
 }
 
-/* Set the size of the progress bar */
 .progress-bar {
 	width: 100%;
 }
@@ -324,6 +346,12 @@ body {
 		grid-auto-flow: column;
 		grid-auto-columns: 1fr;
 		gap: 10px;
+	}
+
+	.button-group {
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
 	}
 
 	.hide-md {
