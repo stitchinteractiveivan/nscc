@@ -224,7 +224,7 @@ line {
 }
 
 .background-image {
-	background-image: url("../im/background-night.jpg");
+	background-image: url("../im/background-optimized.jpg");
 	background-size: cover;
 	background-position: center;
 	height: 100%;
