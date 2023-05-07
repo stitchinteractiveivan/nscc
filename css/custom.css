@@ -223,6 +223,14 @@ line {
 	padding-right: 5px;
 }
 
+.background-image {
+	background-image: url("/im/background-night.jpg");
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+	width: auto;
+}
+
 /********** mobile **********/
 body {
 	height: 100vh;
@@ -253,9 +261,10 @@ body {
 }
 
 .start-content {
+	height: calc(100vh - var(--navbar-height) - 36px);
 	flex-grow: 1;
-	color: var(--color-black);
-	background-color: var(--color-offwhite);
+	color: var(--color-white);
+	background-color: var(--color-white);
 	overflow-y: auto;
 
 	display: flex;
@@ -317,9 +326,10 @@ body {
 	}
 
 	.start-content {
+		height: calc(100vh - var(--navbar-height) - 48px);
 		flex-grow: 1;
-		color: var(--color-black);
-		background-color: var(--color-offwhite);
+		color: var(--color-white);
+		background-color: var(--color-white);
 		overflow-y: auto;
 
 		display: flex;
@@ -389,7 +399,7 @@ body {
 		flex-grow: 1;
 		height: calc(100vh - var(--navbar-height) - 80px);
 		color: var(--color-white);
-		background-color: var(--color-red);
+		background-color: var(--color-white);
 		overflow-y: auto;
 
 		display: flex;
