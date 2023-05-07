@@ -264,7 +264,7 @@ body {
 	height: calc(100vh - var(--navbar-height) - 36px);
 	flex-grow: 1;
 	color: var(--color-white);
-	background-color: var(--color-white);
+	background-color: var(--color-offwhite);
 	overflow-y: auto;
 
 	display: flex;
@@ -329,7 +329,7 @@ body {
 		height: calc(100vh - var(--navbar-height) - 48px);
 		flex-grow: 1;
 		color: var(--color-white);
-		background-color: var(--color-white);
+		background-color: var(--color-offwhite);
 		overflow-y: auto;
 
 		display: flex;
@@ -399,7 +399,7 @@ body {
 		flex-grow: 1;
 		height: calc(100vh - var(--navbar-height) - 80px);
 		color: var(--color-white);
-		background-color: var(--color-white);
+		background-color: var(--color-offwhite);
 		overflow-y: auto;
 
 		display: flex;
