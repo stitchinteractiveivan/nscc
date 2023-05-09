@@ -240,7 +240,7 @@ line {
 .para-group {
 	display: flex;
 	flex-direction: column;
-	gap: 7px;
+	gap: 15px;
 
 	padding: 16px;
 	font-size: 14px;
