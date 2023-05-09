@@ -8,7 +8,7 @@
 	--color-error-red: #f4333d;
 	--color-white: #ffffff;
 	--color-black: #000000;
-	--color-background: #cfa8a8;
+	--color-background: #040218;
 
 	--navbar-height: 62.1px;
 }
@@ -231,7 +231,7 @@ line {
 }
 
 .background-image {
-	background-image: url("../im/background-optimized.jpg");
+	background-image: url("../im/bg-optimized.jpg");
 	background-size: cover;
 	background-position: center;
 	height: 100%;
@@ -472,4 +472,11 @@ body {
 	background-color: white;
 	padding: 20px;
 	border-radius: 5px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+
+	justify-content: center;
+	align-items: center;
 }
