@@ -136,6 +136,7 @@ a {
 .form-check-label {
 	display: flex;
 	padding-left: 15px;
+	padding-top: 4px;
 }
 
 .form-check-input {
@@ -243,6 +244,13 @@ line {
 	gap: 15px;
 
 	padding: 16px;
+	font-size: 14px;
+}
+
+.checkbox-group {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
 	font-size: 14px;
 }
 

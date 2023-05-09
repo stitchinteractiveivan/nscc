@@ -21,12 +21,12 @@
 				<a class="navbar-brand" href="#"><img src="im/logo.png" alt="nscc logo" /></a>
 			</navbar>
 			<div class="new-row row-flex">
-				<div class="start-content background-image" id="start-content">
+				<div class="start-content" id="start-content">
 					<h3>Create your new NSCC Account</h3>
 					<p>
 						Welcome to National Supercomputing Centre ("NSCC") Account Creation Form.<br /><br />
 						Please complete the form to request for a user account. Kindly note that it will take 7 working days to process the creation of user account.<br /><br />
-						Note: If you are from A*STAR NTU, NUS, SUTD, TCOMS, SMU, SIT, SP, TP or RP, you may skip this form and proceed to <a href="https://user.nscc.sg/saml/">New User Enrollment</a>.
+						Note: If you are from A*STAR, NTU, NUS, SUTD, TCOMS, SMU, SIT, SP, TP or RP, you may skip this form and proceed to <a href="https://user.nscc.sg/saml/">New User Enrollment</a>.
 					</p>
 					<div style="background-color: white; height: 1px"></div>
 					<div class="hide-lg" style="display: flex; flex-direction: row; justify-content: flex-end">
@@ -83,17 +83,18 @@
 							<div class="input-group has-validation">
 								<div class="form-floating">
 									<input type="text" class="form-control" id="floatingInput" placeholder="AcmeRD01" />
-									<label for="floatingInput">Preferred User ID</label>
+									<label for="floatingInput">Preferred NSCC User ID</label>
 								</div>
 								<div class="invalid-feedback">Please enter a unique user ID that is 8 characters or less.</div>
 							</div>
 						</div>
+
 						<div class="hide-md" style="display: flex; flex-direction: row; justify-content: flex-end">
 							<button id="continue1" type="button" class="btn btn-primary">
 								<h4>Continue</h4>
 							</button>
 						</div>
-						<line class="hide-md"></line>
+						<line></line>
 					</div>
 					<div class="step-2 step-content" id="step-2">
 						<h3>Organizational Information</h3>
@@ -148,22 +149,95 @@
 								<h4>Continue</h4>
 							</button>
 						</div>
-						<line class="hide-md"></line>
+						<line></line>
 					</div>
 					<div class="step-3 step-content" id="step-3">
 						<h3>Project Information</h3>
-						<div class="form-group">
-							<div class="form-floating">
-								<input type="text" class="form-control" id="floatingInput" placeholder="ACME_RD_2023" />
-								<label for="floatingInput">Project ID (if applicable)</label>
-							</div>
+						<div class="form-floating">
+							<input type="text" class="form-control" id="floatingInput" placeholder="ACME_RD_2023" />
+							<label for="floatingInput">Project ID (if applicable)</label>
+						</div>
 
-							<div class="input-group has-validation">
-								<div class="row-flex-max">
-									<input class="form-control" type="file" id="formFile" style="display: flex; padding: 16px; padding-left: 22px" />
-									<label for="formFile" class="form-label">Upload sponsorship form</label>
+						<div class="form-control para-group">
+							<div class="checkbox-group">
+								<h3 style="text-transform: none">Research Domains</h3>
+								<p>Please indicate the domains that your project is related to:</p>
+							</div>
+							<div class="checkbox-group">
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="researchdomain1" />
+									<label class="form-check-label" for="defaultCheck1"> Manufacturing, Trade and Connectivity </label>
 								</div>
-								<div class="invalid-feedback">Please upload a valid sponsorship form in PDF or Word format with extension .pdf, .doc, or .docx.</div>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="researchdomain2" />
+									<label class="form-check-label" for="defaultCheck2"> Human Health and Potential </label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="researchdomain3" />
+									<label class="form-check-label" for="defaultCheck3"> Urban Solutions and Sustainability </label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="researchdomain4" />
+									<label class="form-check-label" for="defaultCheck4"> Smart Nation and Digital Economy </label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="researchdomain5" />
+									<label class="form-check-label" for="defaultCheck5"> Others, please provide details below </label>
+								</div>
+								<div class="form-group">
+									<div class="input-group has-validation">
+										<div class="form-floating">
+											<input type="text" class="form-control" id="floatingInput" placeholder="Health Sciences" />
+											<label for="floatingInput">Other domains</label>
+										</div>
+										<div class="invalid-feedback">This field is mandatory as you selected "Others"</div>
+									</div>
+									<div class="hide-sm"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-control para-group">
+							<div class="checkbox-group">
+								<h3 style="text-transform: none">Research Collaboration</h3>
+								<p>Are you working with other government agencies or research collaborators?</p>
+							</div>
+							<div class="checkbox-group">
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="researchcollaboration1" />
+									<label class="form-check-label" for="defaultCheck6"> No </label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="researchcollaboration2" />
+									<label class="form-check-label" for="defaultCheck7"> Yes </label>
+								</div>
+							</div>
+							<div class="checkbox-group">
+								<p>If you answered “Yes” to the above, please indicate the name of the organization.</p>
+								<div class="form-group">
+									<div class="input-group has-validation">
+										<div class="form-floating">
+											<input type="text" class="form-control" id="floatingInput" placeholder="Acme Innovations" />
+											<label for="floatingInput">Name of organization</label>
+										</div>
+										<div class="invalid-feedback">This field is mandatory as you selected "Yes".</div>
+									</div>
+									<div class="hide-sm"></div>
+								</div>
+							</div>
+						</div>
+						<div class="form-control para-group">
+							<p>If you are part of a collaboration with existing users from NSCC Stakeholder organizations i.e. A*STAR, NTU, NUS and SUTD, please download the sponsorship form from <a href="https://www.nscc.sg/">LINK TBA by JX</a> and upload the completed form here.</p>
+
+							<div class="form-group">
+								<div class="input-group has-validation">
+									<div class="row-flex-max">
+										<input class="form-control" type="file" id="formFile" style="display: flex; padding: 16px; padding-left: 22px" />
+										<label for="formFile" class="form-label">Upload completed sponsorship form</label>
+									</div>
+									<div class="invalid-feedback">Please upload a valid sponsorship form in PDF or Word format with extension .pdf, .doc, or .docx.</div>
+								</div>
+								<div class="hide-sm"></div>
 							</div>
 						</div>
 
@@ -176,19 +250,20 @@
 								<h4>Continue</h4>
 							</button>
 						</div>
-						<line class="hide-md"></line>
+						<line></line>
 					</div>
 					<div class="step-4 step-content" id="step-4">
+						<h3>Policy Acceptance</h3>
 						<div class="form-control para-group">
 							<p>
 								Our Privacy Statement sets out how we collect, use or disclose personal data that you have provided to us by completing this form.<br /><br />
-								Our Acceptable Use Policy are intended to ensure NSCC users utilise the national high performance computing (HPC) resources in a responsible and appropriate manner.<br /><br />
+								Our Acceptable Use Policy are intended to ensure NSCC users utilize the national high performance computing (HPC) resources in a responsible and appropriate manner.<br /><br />
 								By submitting this form, you are accepting and consenting to:
 							</p>
 
 							<div class="form-group">
 								<div class="step-content">
-									<h3>NSCC's Privacy Statement*</h3>
+									<h3 style="text-transform: none">NSCC's Privacy Statement*</h3>
 									<div class="input-group has-validation">
 										<div class="form-control" id="floatingInput" style="padding: 16px">
 											<div class="form-check">
@@ -203,7 +278,7 @@
 								</div>
 
 								<div class="step-content">
-									<h3>NSCC's Acceptable Use Policy*</h3>
+									<h3 style="text-transform: none">NSCC's Acceptable Use Policy*</h3>
 									<div class="input-group has-validation">
 										<div class="form-control" id="floatingInput" placeholder="sarah.tan@acmeinnovations.com" style="padding: 16px">
 											<div class="form-check">
@@ -236,7 +311,7 @@
 							</div>
 						</div>
 
-						<line class="hide-md"></line>
+						<line></line>
 					</div>
 				</div>
 			</div>
