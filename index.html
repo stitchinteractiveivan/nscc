@@ -24,10 +24,9 @@
 				<div class="start-content background-image" id="start-content">
 					<h3>Create your new NSCC Account</h3>
 					<p>
-						Welcome to National Supercomputing Centre ("NSCC") Account Creation Form.<br />
-						<br />
-						Please complete the form to request for a user account.<br class="hide-sm" />
-						Kindly note that it will take 7 working days to process the creation of user account.
+						Welcome to National Supercomputing Centre ("NSCC") Account Creation Form.<br /><br />
+						Please complete the form to request for a user account. Kindly note that it will take 7 working days to process the creation of user account.<br /><br />
+						Note: If you are from A*STAR, NTU, NUS, SUTD, TCOMS, SMU, SIT, SP, TP or RP, you may skip this form and proceed to <a href="https://user.nscc.sg/saml/">New User Enrollment</a>.
 					</p>
 					<div style="background-color: white; height: 1px"></div>
 					<div class="hide-lg" style="display: flex; flex-direction: row; justify-content: flex-end">
@@ -180,36 +179,52 @@
 						<line class="hide-md"></line>
 					</div>
 					<div class="step-4 step-content" id="step-4">
-						<form action="?" method="POST">
-							<div class="g-recaptcha" data-sitekey="6Le_RcMlAAAAAF-Tmm2ezyxMPNfmXVCSDBYBxPvW" data-size="normal"></div>
-						</form>
+						<div class="form-control para-group">
+							<p>
+								Our Privacy Statement sets out how we collect, use or disclose personal data that you have provided to us by completing this form.<br /><br />
+								Our Acceptable Use Policy are intended to ensure NSCC users utilise the national high performance computing (HPC) resources in a responsible and appropriate manner.<br /><br />
+								By submitting this form, you are accepting and consenting to:
+							</p>
 
-						<p>
-							Our Privacy Statement sets out how we collect, use or disclose personal data that you have provided to us by completing this form.<br /><br />
-
-							Our Acceptable Use Policy are intended to ensure NSCC users utilize the national high performance computing (HPC) resources in a responsible and appropriate manner.<br /><br />
-
-							By submitting this form, you are accepting and consenting to:<br /><br />
-
-							NSCC’s Privacy Statement*<br />
-							I acknowledge that I have read and agree to the terms in the Privacy Statement.<br /><br />
-
-							NSCC’s Acceptable Use Policy*<br />
-							I agree to NSCC’s Acceptable Use Policy<br /><br />
-
-							For further assistance, please contact us at bizdev@nscc.sg
-						</p>
-
-						<div class="form-group">
-							<div class="input-group has-validation">
-								<div class="form-control" id="floatingInput" placeholder="sarah.tan@acmeinnovations.com" style="padding: 16px">
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-										<label class="form-check-label" for="flexCheckDefault" style="font-size: 14px">I accept the NSCC terms and conditions and privacy policy.</label>
+							<div class="form-group">
+								<div class="step-content">
+									<h3>NSCC's Privacy Statement*</h3>
+									<div class="input-group has-validation">
+										<div class="form-control" id="floatingInput" style="padding: 16px">
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" value="" id="checkprivacystatement" />
+												<label class="form-check-label" for="checkprivacystatement" style="font-size: 14px"
+													><span>I acknowledge that I have read and agree to the terms in the <a href="https://www.nscc.sg/privacy-statement">Privacy Statement</a>.</span></label
+												>
+											</div>
+										</div>
+										<div class="invalid-feedback">Please check the box to confirm that you accept the terms and conditions and privacy policy.</div>
 									</div>
 								</div>
-								<div class="invalid-feedback">Please check the box to confirm that you accept the terms and conditions and privacy policy.</div>
+
+								<div class="step-content">
+									<h3>NSCC's Acceptable Use Policy*</h3>
+									<div class="input-group has-validation">
+										<div class="form-control" id="floatingInput" placeholder="sarah.tan@acmeinnovations.com" style="padding: 16px">
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" value="" id="checkaup" />
+												<label class="form-check-label" for="checkaup" style="font-size: 14px"
+													><span>I agree to NSCC's <a href="https://help.nscc.sg/aup/">Acceptable Use Policy</a>.</span></label
+												>
+											</div>
+										</div>
+										<div class="invalid-feedback">Please check the box to confirm that you accept the terms and conditions and privacy policy.</div>
+									</div>
+								</div>
 							</div>
+
+							<p>For further assistance, please contact us at <a href="mailto:bizdev@nscc.sg">bizdev@nscc.sg</a></p>
+						</div>
+
+						<div class="form-group">
+							<form action="?" method="POST">
+								<div class="g-recaptcha" data-sitekey="6Le_RcMlAAAAAF-Tmm2ezyxMPNfmXVCSDBYBxPvW" data-size="normal"></div>
+							</form>
 							<div class="button-group">
 								<button id="back3" type="button" class="btn btn-back hide-md">
 									<img src="im/back.svg" alt="Back Arrow" />

@@ -8,6 +8,7 @@
 	--color-error-red: #f4333d;
 	--color-white: #ffffff;
 	--color-black: #000000;
+	--color-background: #cfa8a8;
 
 	--navbar-height: 62.1px;
 }
@@ -71,6 +72,11 @@ h4 {
 
 	margin-top: 0rem;
 	margin-bottom: 0rem;
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-red);
 }
 
 /********** flex **********/
@@ -231,6 +237,15 @@ line {
 	width: auto;
 }
 
+.para-group {
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+
+	padding: 16px;
+	font-size: 14px;
+}
+
 /********** mobile **********/
 body {
 	height: 100vh;
@@ -264,7 +279,7 @@ body {
 	height: calc(100vh - var(--navbar-height) - 36px);
 	flex-grow: 1;
 	color: var(--color-white);
-	background-color: var(--color-offwhite);
+	background-color: var(--color-background);
 	overflow-y: auto;
 
 	display: flex;
@@ -329,7 +344,7 @@ body {
 		height: calc(100vh - var(--navbar-height) - 48px);
 		flex-grow: 1;
 		color: var(--color-white);
-		background-color: var(--color-offwhite);
+		background-color: var(--color-background);
 		overflow-y: auto;
 
 		display: flex;
@@ -399,7 +414,7 @@ body {
 		flex-grow: 1;
 		height: calc(100vh - var(--navbar-height) - 80px);
 		color: var(--color-white);
-		background-color: var(--color-offwhite);
+		background-color: var(--color-background);
 		overflow-y: auto;
 
 		display: flex;
