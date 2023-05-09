@@ -21,20 +21,26 @@
 				<a class="navbar-brand" href="#"><img src="im/logo.png" alt="nscc logo" /></a>
 			</navbar>
 			<div class="new-row row-flex">
-				<div class="start-content background-image" id="start-content">
-					<h3>Create your new NSCC Account</h3>
-					<p>
-						Welcome to National Supercomputing Centre ("NSCC") Account Creation Form.<br /><br />
-						Please complete the form to request for a user account. Kindly note that it will take 7 working days to process the creation of user account.<br /><br />
-						Note: If you are from A*STAR, NTU, NUS, SUTD, TCOMS, SMU, SIT, SP, TP or RP, you may skip this form and proceed to <a href="https://user.nscc.sg/saml/">New User Enrollment</a>.
-					</p>
-					<div style="background-color: white; height: 1px"></div>
-					<div class="hide-lg" style="display: flex; flex-direction: row; justify-content: flex-end">
-						<button id="continue0" type="button" class="btn btn-primary">
-							<h4>Get started</h4>
-						</button>
+				<div class="video-container">
+					<video id="background-video" autoplay loop muted poster="./im/gradient.mp4">
+						<source src="./im/gradient.mp4" type="video/mp4" />
+					</video>
+					<div class="start-content" style="background: none" id="start-content">
+						<h3>Create your new NSCC Account</h3>
+						<p>
+							Welcome to National Supercomputing Centre ("NSCC") Account Creation Form.<br /><br />
+							Please complete the form to request for a user account. <br class="hide-sm" />Kindly note that it will take 7 working days to process the creation of user account.<br /><br />
+							Note: If you are from A*STAR, NTU, NUS, SUTD, TCOMS, SMU, SIT, SP, TP or RP, <br class="hide-sm" />you may skip this form and proceed to <a href="https://user.nscc.sg/saml/">New User Enrollment</a>.
+						</p>
+						<div style="background-color: white; height: 1px"></div>
+						<div class="hide-lg" style="display: flex; flex-direction: row; justify-content: flex-end">
+							<button id="continue0" type="button" class="btn btn-primary">
+								<h4>Get started</h4>
+							</button>
+						</div>
 					</div>
 				</div>
+
 				<div class="form-content" id="form-content">
 					<div class="progress-bar vert-flex hide-md" id="progress-bar">
 						<span id="dot-1" class="dot"><h3 class="prevent-select">1</h3></span>
@@ -321,7 +327,7 @@
 		<div id="overlay" class="overlay-container" style="display: none">
 			<div class="white-box">
 				<iframe src="https://embed.lottiefiles.com/animation/96237"></iframe>
-				<h3 style="text-transform: none;">Your request has been submitted!</h3>
+				<h3 style="text-transform: none">Your request has been submitted!</h3>
 				<p>Check your inbox for more details.</p>
 			</div>
 		</div>
